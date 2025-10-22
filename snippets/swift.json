@@ -1,0 +1,3 @@
+{
+  "Function":        { "prefix": "fun", "body": "func $1($2) -> $3 {\n $0\n}\n"         }
+}
