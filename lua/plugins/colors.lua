@@ -12,7 +12,6 @@ return {
 		"https://github.com/echasnovski/mini.icons",
 		config = function()
 			require("mini.icons").setup()
-			vim.cmd("colorscheme gruvbox-material")
 		end,
 	},
 	{
@@ -32,6 +31,10 @@ return {
 					hex_color = hipatterns.gen_highlighter.hex_color(),
 				},
 			})
+
+
+			vim.cmd("colorscheme neopywal")
 		end,
 	},
+	"RedsXDD/neopywal.nvim"
 }
