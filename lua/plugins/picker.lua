@@ -2,6 +2,9 @@ return {
 	{
 		"nvim-mini/mini.pick",
 		version = "*",
+		dependencies = {
+			"nvim-mini/mini.extra"
+		},
 		config = function()
 			require("mini.pick").setup({
 				mappings = {
@@ -12,6 +15,18 @@ return {
 			vim.keymap.set("n", "<leader>f", ":Pick files<CR>", { desc = "Search files" })
 			vim.keymap.set("n", "<leader>h", ":Pick help<CR>", { desc = "Search help" })
 			vim.keymap.set("n", "<leader>g", ":Pick grep_live<CR>", { desc = "Search live grep" })
+
+			vim.keymap.set("n", "<leader>r", function ()
+				MiniExtra.pickers.oldfiles() 
+			end, { desc = "Search [r]ecent files" })
+
+			vim.keymap.set("n", "<leader><CR>", function ()
+				MiniExtra.pickers.marks({scope = "global"})
+			end, { desc = "Search [m]arks" } )
+
+			vim.keymap.set("n", "<leader>:", function ()
+				MiniExtra.pickers.commands()
+			end, { desc = "Search [:] commands" } )
 		end,
 	},
 	{

@@ -30,6 +30,8 @@ vim.keymap.set({ 'n', 'v' }, '<leader>p', '"0p', { desc = 'Paste from the regist
 vim.keymap.set('n', '<leader>lf', vim.lsp.buf.format, { desc = 'Format buffer' })
 vim.keymap.set('n', '<leader>cc', '<cmd>cclose<cr>', { desc = 'Close quickfix list' })
 
+vim.keymap.set('t', '<C-[>', [[<C-\><C-n>]], { desc = 'Exit terminal mode' })
+
 
 vim.cmd(":hi statusline guibg=NONE")
 
@@ -48,7 +50,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- Set wrap true on markdowon file
 vim.api.nvim_create_autocmd('FileType', {
-	pattern = 'markdown',
+	pattern = '*.md',
 	desc = 'Set text wrap to true when opening .md files',
 	group = vim.api.nvim_create_augroup('MarkdownWrap', { clear = true }), 
 	callback = function()
